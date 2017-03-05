@@ -27,23 +27,25 @@ setMethod("show", "Rcpp_Hashmap",
         }
         sz <- object$size()
 
-        .keys <- object$keys()[seq_len(min(sz, n_print))]
-        .values <- object$values()[seq_len(min(sz, n_print))]
+        .keys <- object$keys_n(min(sz, n_print))
+        .values <- object$values_n(min(sz, n_print))
 
 
         .lhs_header <- sprintf("(%s)", class(.keys)[1])
         .rhs_header <- sprintf("(%s)", class(.values)[1])
 
-        #.data <- head(object$data(), n_print)
-
-        if (is.numeric(.keys)) {
+        if (is.integer(.keys)) {
+            .keys <- sprintf("[%d]", .keys)
+        } else if (is.numeric(.keys)) {
             .keys <- sprintf("[%+f]",
                 round(.keys, getOption("digits")))
         } else {
             .keys <- sprintf("[%s]", .keys)
         }
 
-        if (is.numeric(.values)) {
+        if (is.integer(.values)) {
+            .values <- sprintf("[%d]", .values)
+        } else if (is.numeric(.values)) {
             .values <- sprintf("[%+f]",
                 round(.values, getOption("digits"))
             )
@@ -74,3 +76,35 @@ setMethod("show", "Rcpp_Hashmap",
         invisible(object)
     }
 )
+
+#' @rdname plot.Rcpp_Hashmap
+#' @title Plot method for Hashmap class
+#' @name plot
+#' @aliases plot
+#' @description Plot method for Hashmap class
+#' @param x an object created by a call to \code{hashmap}
+#' @param \dots arguments passed to \code{plot}
+#' @details A convenience function which simply calls \code{plot} using
+#'  \code{x$keys()} and \code{x$values()} as plotting coordinates.
+#'
+#' @examples
+#'
+#' x <- hashmap(1:20, rnorm(20))
+#' plot(x)
+#' plot(x, type = 'p', pch = 20, col = 'red')
+#'
+#' y <- hashmap(Sys.Date() + 1:20, rnorm(20))
+#' plot(y, type = 'h', col = 'blue', lwd = 3)
+
+#' @importFrom graphics plot
+#' @method plot Rcpp_Hashmap
+#' @export
+plot.Rcpp_Hashmap <- function(x, ...) {
+    if (x$empty()) {
+        stop("Cannot plot empty hashmap.")
+    }
+
+    keys <- x$keys()
+    values <- x$values()
+    invisible(plot(keys, values, ...))
+}
