@@ -1,8 +1,8 @@
 Package: hashmap
 Type: Package
 Title: The Faster Hash Map
-Version: 0.2.1
-Date: 2017-11-15
+Version: 0.2.2
+Date: 2017-11-16
 Authors@R: person("Nathan", "Russell", email = "russell.nr2012@gmail.com",
     role = c("aut", "cre"))
 URL: https://github.com/nathan-russell/hashmap
@@ -22,8 +22,8 @@ Collate: 'hashmap.R' 'classes.R' 'Hashmap-class.R' 'RcppExports.R'
         'save_hashmap.R' 'zzz.R'
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2017-11-15 15:13:13 UTC; nathan
+Packaged: 2017-11-16 14:19:08 UTC; nathan
 Author: Nathan Russell [aut, cre]
 Maintainer: Nathan Russell <russell.nr2012@gmail.com>
 Repository: CRAN
-Date/Publication: 2017-11-15 21:38:55 UTC
+Date/Publication: 2017-11-16 15:19:42 UTC

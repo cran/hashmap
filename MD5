@@ -1,4 +1,4 @@
-34c75e9507c6b0e057532891acb9aad6 *DESCRIPTION
+ed1519adfe0ab30336c5a80aacf71211 *DESCRIPTION
 5429303ecfacbf74bf4ff174ddee8924 *LICENSE
 8f2d7c568ab5a7f8830d361c95912d70 *NAMESPACE
 40255d07e3ca42a5eb7daaba7b0645cb *R/Hashmap-class.R
@@ -23,7 +23,7 @@ b2de44553371e47e8be895e33826d4c9 *inst/include/hashmap/sparsepp/spp_config.h
 556b80e844a5d6b8d34b0d911b05230c *inst/include/hashmap/sparsepp/spp_stdint.h
 f0b2712a58ee94c7d5870647d2c0a385 *inst/include/hashmap/sparsepp/spp_timer.h
 9e1c2731d413bc9ce7102a291270c0a1 *inst/include/hashmap/sparsepp/spp_traits.h
-4ab58805a92308eb2da5fff72fd80781 *inst/include/hashmap/sparsepp/spp_utils.h
+ccf5728e2233aac01e4480ce9781483a *inst/include/hashmap/sparsepp/spp_utils.h
 4458a86d232de1980ebc5989d985bedb *inst/include/hashmap/traits.hpp
 584a3b475d905edc5b564c8ab2aa1122 *inst/include/hashmap/utils.hpp
 8e9f1d2410e3ac086a1aa28b5b7cbf0a *man/Hashmap-class.Rd
